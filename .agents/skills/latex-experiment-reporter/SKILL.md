@@ -38,12 +38,14 @@ The generated LaTeX file must follow this exact structure using subsection heade
 % Why do we think these results occurred? Cite relevant literature using \cite{...} that supports or contrasts with our findings.
 ```
 
-## Bibliography Management
+## Bibliography Management (via Zotero)
 
-If your discussion section introduces a new paper that isn't already in the project's bibliography:
-1.  Obtain the BibTeX entry for the paper.
-2.  Append it to the main project `.bib` file (usually `references.bib` or `machine_learning.bib` in the LaTeX directory).
-3.  Ensure your `\cite{}` keys in the report match the added BibTeX keys perfectly.
+When writing the Discussion section and citing papers:
+1.  **Search Zotero** for relevant papers: `zotero_search_items(query="...", tag="TopAttention")`
+2.  **Get metadata**: `zotero_item_metadata(item_key="...")` to extract title, authors, DOI, year.
+3.  **Format as BibTeX**: Use key convention `{first_author}_{keyword}_{year}` (e.g., `vaswani_attention_2017`).
+4.  **Append** the BibTeX entry to the project `.bib` file.
+5.  **Cite** in the `.tex` fragment using `\cite{key}` — ensure keys match exactly.
 
 ## PR-Triggered Auto-Update
 
