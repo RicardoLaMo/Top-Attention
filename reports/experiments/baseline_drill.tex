@@ -1,0 +1,18 @@
+\subsection{Experiment: Baseline}
+\label{sec:exp_baseline}
+
+\textbf{Intention \& Methodology:} 
+We need a simple baseline to understand the performance of standard NLP techniques before moving to graphs. The plan is to compute TF-IDF features on the text (max\_features=1000) and evaluate ROC-AUC using a Logistic Regression model (Targeting PRD: \texttt{docs/prd/drill\_baseline.md}).
+
+\textbf{Implementation Details:}
+This run was executed on branch \texttt{feat/baseline-drill} with git hash \texttt{mockabc123}. Key hyperparameters included \texttt{max\_features: 1000} and \texttt{model\_type: LogisticRegression}.
+
+\textbf{Results (Champion):}
+As the first run in this category, this model establishes the Champion benchmark:
+\begin{itemize}
+    \item \textbf{ROC-AUC:} 0.812
+    \item \textbf{PR-AUC:} 0.655
+\end{itemize}
+
+\textbf{Discussion \& Literature:}
+This standard technique provides a solid floor, but fails to capture complex interactions or structural patterns in the data. We hypothesize that geometry-aware methods (e.g., GNNs \cite{velickovic2018graph}) will significantly outperform this flat vector representation.
